@@ -1,40 +1,44 @@
 {
-  "name": "frontend",
-  "version": "0.0.1",
-  "description": "Frontend for calculator webapp",
-  "scripts": {
-    "start": "kill-port 3000 && react-scripts start",
-    "format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\" && npm run lint",
-    "lint": "eslint . --ext js,ts,tsx --fix"
-  },
-  "browsersList": [
-    "<0.2%",
-    "not dead",
-    "not ie < 11",
-    "not op_mini all"
-  ],
-  "dependencies": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "^5.0.1"
-  },
-  "devDependencies": {
-    "cypress": "^10.2.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-prettier": "^4.1.0",
-    "kill-port": "^2.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "frontend",
+    "version": "0.0.1",
+    "description": "Frontend for calculator webapp",
+    "scripts": {
+        "start": "kill-port 3000 && react-scripts start",
+        "format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\" && npm run lint",
+        "lint": "eslint . --ext js,ts,tsx --fix"
+    },
+    "browsersList": [
+        "<0.2%",
+        "not dead",
+        "not ie < 11",
+        "not op_mini all"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "dependencies": {
+        "@emotion/react": "^11.9.3",
+        "@emotion/styled": "^11.9.3",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "^5.0.1"
+    },
+    "devDependencies": {
+        "axios": "^0.27.2",
+        "cypress": "^10.2.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-cypress": "^2.12.1",
+        "eslint-plugin-prettier": "^4.1.0",
+        "kill-port": "^2.0.1"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
