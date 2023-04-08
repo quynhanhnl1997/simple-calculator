@@ -56,18 +56,21 @@ const start = async ({ port } = {}) => {
     app.post('/login', handleLogin);
 
     return new Promise((resolve) => {
-        const server = app.listen(port, () => {
-            debug(`Listening on port ${server.address().port}`);
-            const originalClose = server.close.bind(server);
-            server.close = () => {
-                return new Promise((resolveClose) => {
-                    originalClose(resolveClose);
-                });
-            };
-            resolve(server);
-        });
+        if (process.env.NODE_ENV !== 'test') {
+            const server = app.listen(port, () => {
+                debug(`Listening on port ${server.address().port}`);
+                const originalClose = server.close.bind(server);
+                server.close = () => {
+                    return new Promise((resolveClose) => {
+                        originalClose(resolveClose);
+                    });
+                };
+                resolve(server);
+            });
+        }
+        resolve(true);
     });
 };
 
-export default app;
-start();
+export { app, users };
+await start();
