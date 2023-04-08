@@ -6,11 +6,11 @@ import cors from 'cors';
 
 const debug = getDebugger('app');
 const users = {};
+const app = express();
 
 const start = async ({ port } = {}) => {
     port = port || process.env.PORT || (await detectPort(3001));
 
-    const app = express();
     app.use(cors());
     app.use(bodyParser.json());
 
@@ -69,4 +69,5 @@ const start = async ({ port } = {}) => {
     });
 };
 
+export default app;
 start();

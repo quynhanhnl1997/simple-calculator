@@ -1,22 +1,25 @@
 {
-  "name": "simple-calculator",
-  "description": "A simple webapp to see how testing works",
-  "private": true,
-  "scripts": {
-    "prepare": "husky install",
-    "start": "npm run start --workspaces",
-    "format": "npm run format --workspaces"
-  },
-  "workspaces": [
-    "app/server",
-    "app/frontend"
-  ],
-  "lint-staged": {
-    "*.{js,jsx,json,css,md}": "prettier --write"
-  },
-  "devDependencies": {
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
-  }
+    "name": "simple-calculator",
+    "description": "A simple webapp to see how testing works",
+    "private": true,
+    "scripts": {
+        "prepare": "husky install",
+        "start": "npm run start --workspaces",
+        "format": "npm run format --workspaces"
+    },
+    "workspaces": [
+        "app/server",
+        "app/frontend"
+    ],
+    "lint-staged": {
+        "*.{js,jsx,json,css,md}": "prettier --write"
+    },
+    "devDependencies": {
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
+        "prettier": "^2.7.1"
+    },
+    "dependencies": {
+        "supertest": "^6.3.3"
+    }
 }
